@@ -2,12 +2,12 @@ import React from 'react';
 
 function Form(props) {
 	return (
-		<form onSubmit={props.onSubmit}>
+		<form className='ui input' onSubmit={props.onSubmit}>
 			<input
 				type='text'
 				placeholder='Location'
 				onChange={props.onLocation}></input>
-			<input type='submit' value='Search'></input>
+			<input className='ui button' type='submit' value='Search'></input>
 		</form>
 	);
 }

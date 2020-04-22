@@ -7,7 +7,7 @@ class App extends Component {
 		super(props);
 		this.state = {
 			location: '',
-			rawData: [],
+			json: [],
 			actualData: [],
 		};
 	}
@@ -19,7 +19,7 @@ class App extends Component {
 			temp: '',
 			feels: '',
 		};
-		const data = this.state.rawData;
+		const data = this.state.json;
 		obj.location = data.name;
 		obj.weather = data.weather[0].description;
 		obj.temp = data.main.temp;
@@ -39,7 +39,7 @@ class App extends Component {
 			url = `https://api.openweathermap.org/data/2.5/weather?q=${place}&units=metric&appid=73bb57b7d1fab98dc011bd2055bf4c84`;
 			const data = await fetch(url, { mode: 'cors' });
 			const weather = await data.json();
-			this.setState({ rawData: weather });
+			this.setState({ json: weather });
 			this.getData();
 		} catch (err) {
 			console.log(err);
@@ -62,10 +62,17 @@ class App extends Component {
 	};
 	render() {
 		return (
-			<div className='App'>
-				<header className='App-header'>Weather App</header>
-				<Form onLocation={this.locationInput} onSubmit={this.handleSubmit} />
-				<Weather data={this.state.actualData} />
+			<div className='ui center aligned grid'>
+				<div className='ui container'>
+					<header>
+						<h3 className='ui header'>Weather App</h3>
+					</header>
+
+					<Form onLocation={this.locationInput} onSubmit={this.handleSubmit} />
+					<div className='ui teal card'>
+						<Weather data={this.state.actualData} />
+					</div>
+				</div>
 			</div>
 		);
 	}
