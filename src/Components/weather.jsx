@@ -3,11 +3,13 @@ import React from 'react';
 function Weather(props) {
 	const { location, weather, temp, feels } = props.data;
 	return (
-		<div>
-			<div>city: {location} </div>
-			<div>weather: {weather}</div>
-			<div>temp: {temp} </div>
-			<div>feels: {feels} </div>
+		<div className='card'>
+			<ul>
+				<li id='city'>{location} </li>
+				<li id='temp'> {temp} °C</li>
+				<li>feels {feels} °C</li>
+				<li> {weather}</li>
+			</ul>
 		</div>
 	);
 }

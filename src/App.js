@@ -62,16 +62,15 @@ class App extends Component {
 	};
 	render() {
 		return (
-			<div className='ui center aligned grid'>
-				<div className='ui container'>
+			<div className=''>
+				<div className='container'>
 					<header>
-						<h3 className='ui header'>Weather App</h3>
+						<h3 className=''>Weather App</h3>
 					</header>
 
-					<Form onLocation={this.locationInput} onSubmit={this.handleSubmit} />
-					<div className='ui teal card'>
-						<Weather data={this.state.actualData} />
-					</div>
+					<Form onChange={this.locationInput} onSubmit={this.handleSubmit} />
+
+					<Weather data={this.state.actualData} />
 				</div>
 			</div>
 		);

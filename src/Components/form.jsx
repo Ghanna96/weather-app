@@ -1,15 +1,8 @@
 import React from 'react';
+import Searchbar from './searchbar/Searchbar';
 
 function Form(props) {
-	return (
-		<form className='ui input' onSubmit={props.onSubmit}>
-			<input
-				type='text'
-				placeholder='Location'
-				onChange={props.onLocation}></input>
-			<input className='ui button' type='submit' value='Search'></input>
-		</form>
-	);
+	return <Searchbar onSubmit={props.onSubmit} onChange={props.onChange} />;
 }
 
 export default Form;

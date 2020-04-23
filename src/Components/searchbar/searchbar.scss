@@ -1,0 +1,23 @@
+.flexbox {
+	border: 1px solid #dfe1e5;
+	display: flex;
+	height: 44px;
+	width: 482px;
+	border-radius: 30px;
+	&:hover {
+		box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+		border-color: rgba(223, 225, 229, 0);
+	}
+	margin-bottom: 1em;
+}
+.textbox {
+	color: rgba(0, 0, 0, 0.87);
+	font: 16px arial, sans-serif;
+	-webkit-tap-highlight-color: transparent;
+	background-color: transparent;
+	flex: 1;
+	display: flex;
+	border: none;
+	margin: 0 15px 0 15px;
+	outline: none;
+}
