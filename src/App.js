@@ -3,27 +3,37 @@ import Form from './Components/form';
 import Weather from './Components/weather';
 
 class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			location: '',
-			json: [],
-			actualData: [],
-		};
-	}
+	state = {
+		location: '',
+		json: [],
+		actualData: [],
+	};
+
 	//extract the info we're interested *incomplete
 	getData = () => {
 		const obj = {
 			location: '',
 			weather: '',
 			temp: '',
+			max: '',
+			min: '',
 			feels: '',
+			icon: '',
+			humidity: '',
+			pressure: '',
+			wind: '',
 		};
 		const data = this.state.json;
 		obj.location = data.name;
 		obj.weather = data.weather[0].description;
-		obj.temp = data.main.temp;
-		obj.feels = data.main.feels_like;
+		obj.icon = data.weather[0].icon;
+		obj.temp = Math.round(data.main.temp);
+		obj.max = Math.round(data.main.temp_max);
+		obj.min = Math.round(data.main.temp_min);
+		obj.feels = Math.round(data.main.feels_like);
+		obj.humidity = data.main.humidity;
+		obj.pressure = data.main.pressure;
+		obj.wind = data.wind.speed;
 		this.setState({ actualData: obj });
 		console.log('obj ', obj);
 	};
@@ -70,7 +80,10 @@ class App extends Component {
 
 					<Form onChange={this.locationInput} onSubmit={this.handleSubmit} />
 
-					<Weather data={this.state.actualData} />
+					<Weather
+						data={this.state.actualData}
+						icon={this.state.actualData.icon}
+					/>
 				</div>
 			</div>
 		);
