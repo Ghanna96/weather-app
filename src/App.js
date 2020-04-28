@@ -72,7 +72,7 @@ class App extends Component {
 	};
 	render() {
 		return (
-			<div className=''>
+			
 				<div className='container'>
 					<header>
 						<h3 className=''>Weather App</h3>
@@ -85,7 +85,7 @@ class App extends Component {
 						icon={this.state.actualData.icon}
 					/>
 				</div>
-			</div>
+			
 		);
 	}
 }
