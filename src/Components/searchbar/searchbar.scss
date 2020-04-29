@@ -8,7 +8,7 @@
 		box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
 		border-color: rgba(223, 225, 229, 0);
 	}
-	margin-bottom: 1em;
+	margin: 0 auto;
 }
 .textbox {
 	color: rgb(44, 44, 44);
@@ -22,12 +22,10 @@
 	outline: none;
 }
 
-@media only screen 
-  and (max-device-width: 640px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-	.flexbox{
+@media only screen and (max-device-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
+	.flexbox {
 		width: 90%;
 		border-radius: 3px;
-		margin: 0 auto;	
+		margin: 0 auto;
 	}
 }
