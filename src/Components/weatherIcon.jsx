@@ -1,7 +1,7 @@
 import React from 'react';
 
 function WeatherIcon(props) {
-	let url = `http://openweathermap.org/img/wn/${props.icon}@2x.png`;
+	let url = `https://openweathermap.org/img/wn/${props.icon}@2x.png`;
 
 	return (
 		<span>
