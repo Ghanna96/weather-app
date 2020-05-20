@@ -57,7 +57,7 @@ class App extends Component {
 	};
 	componentDidMount() {
 		//fetch api and save obj in state
-		this.getApi('Brescia');
+		this.getApi('Milano');
 	}
 	locationInput = (e) => {
 		let city = this.state.location;
@@ -72,20 +72,18 @@ class App extends Component {
 	};
 	render() {
 		return (
-			
-				<div className='container'>
-					<header>
-						<h3 className=''>Weather App</h3>
-					</header>
+			<div className='container'>
+				<header>
+					<h3 className=''>Weather App</h3>
+				</header>
 
-					<Form onChange={this.locationInput} onSubmit={this.handleSubmit} />
+				<Form onChange={this.locationInput} onSubmit={this.handleSubmit} />
 
-					<Weather
-						data={this.state.actualData}
-						icon={this.state.actualData.icon}
-					/>
-				</div>
-			
+				<Weather
+					data={this.state.actualData}
+					icon={this.state.actualData.icon}
+				/>
+			</div>
 		);
 	}
 }
