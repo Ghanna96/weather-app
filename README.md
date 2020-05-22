@@ -1,6 +1,6 @@
 Weather App
 
-Check the current weather of a specific city
+Check the current weather of a specific city.
 
 Developed with: 
 
