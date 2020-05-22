@@ -3,6 +3,7 @@ Weather App
 Check the current weather of a specific city
 
 Developed with: 
+
 -ReactJS
 
 -CSS/ SASS
